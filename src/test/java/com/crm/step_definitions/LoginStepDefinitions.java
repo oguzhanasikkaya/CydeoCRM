@@ -22,21 +22,17 @@ public class LoginStepDefinitions {
     @When("user enters username {string}")
     public void user_enters_username(String string) {
         loginPage.usernameBox.sendKeys(string);
-
     }
 
     @When("user enters password {string}")
     public void user_enters_password(String string) {
         loginPage.passwordBox.sendKeys(string);
-
     }
 
     @When("user click login button")
     public void user_click_login_button() {
         loginPage.loginBtn.click();
     }
-
-
 
 
     @When("user enter username {string}")
