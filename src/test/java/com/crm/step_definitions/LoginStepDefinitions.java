@@ -1,31 +1,73 @@
 package com.crm.step_definitions;
 
+import com.crm.pages.LoginPage;
+import com.crm.utilities.ConfigurationReader;
+import com.crm.utilities.Driver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.List;
+
 public class LoginStepDefinitions {
 
-    @When("<user> is on the login page")
-    public void user_is_on_the_login_page() {
-        System.out.println("hello");
-    }
-    @And("<user> enter valid <username>")
-    public void user_enter_valid_username() {
+    LoginPage loginPage = new LoginPage();
+
+    @Given("user is on the crm login page")
+    public void user_is_on_the_crm_login_page() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
 
     }
-    @And("<user> enter valid <password>")
-    public void user_enter_valid_password() {
+    @When("user enters username {string}")
+    public void user_enters_username(String string) {
+        loginPage.usernameBox.sendKeys(string);
 
     }
-    @And("<user> click sing in button")
-    public void user_click_sing_in_button() {
+
+    @When("user enters password {string}")
+    public void user_enters_password(String string) {
+        loginPage.passwordBox.sendKeys(string);
 
     }
-    @Then("<user> see his\\/her name on the dashboard")
-    public void user_see_his_her_name_on_the_dashboard() {
+
+    @When("user click login button")
+    public void user_click_login_button() {
+        loginPage.loginBtn.click();
+    }
+
+
+
+
+    @When("user enter username {string}")
+    public void user_enter_username(String string) {
+        loginPage.usernameBox.sendKeys(string);
 
     }
+    @When("user enters {string}")
+    public void user_enters(String string) {
+        loginPage.passwordBox.sendKeys(string);
+
+    }
+
+    @Then("user should see the hr {string}")
+    public void user_should_see_the_hr(String string) {
+
+    }
+
+    @Then("user should see the marketing {string}")
+    public void user_should_see_the_marketing(String string) {
+
+    }
+
+
+
+
+
+
+
+
+
 
 
 
