@@ -1,1 +1,3 @@
 added directly from github.com to simulate remote repo 
+
+doing more work and trying to pull it down local repo
