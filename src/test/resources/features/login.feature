@@ -1,3 +1,4 @@
+@AZLC-1428
 Feature: Login functionality
   User Story:
   1-All users can log in with valid credentials.
@@ -10,10 +11,12 @@ Feature: Login functionality
   8-All users can see their own usernames in the profile menu, after successful login
 
   Accounts are: hr, helpdesk, marketing
+
+
   Background:
     Given user is on the crm login page
 
-  @hr @login @smoke @validData
+  @AZLC-1427 @hr @login @smoke @validData
   Scenario Outline: As a HR user successfully login
 
     When  user enters username "<hr username>"
@@ -26,11 +29,12 @@ Feature: Login functionality
       | hr70@cybertekschool.com | UserUser    | hr70@cybertekschool.com |
       | hr88@cybertekschool.com | UserUser    | hr88@cybertekschool.com |
 
-  @marketing @login @smoke @validData
+  @AZLC-1427 @marketing @login @smoke @validData
   Scenario Outline: Login as marketing
 
     When user enter username "<marketing username>"
     And  user enters "<marketing password>"
+    And  user click login button
     Then user should see the marketing "<his/her name>"
     Examples:
       | marketing username             | marketing password | his/her name                   |
@@ -39,11 +43,12 @@ Feature: Login functionality
       | marketing51@cybertekschool.com | UserUser           | marketing51@cybertekschool.com |
 
 
-  @helpdesk @login @smoke @validData
+  @AZLC-1427 @helpdesk @login @smoke @validData
   Scenario Outline: Login as helpdesk
 
-    When  user enters helpdesk "<helpdesk username>"
-    And   user enters helpdesk "<helpdesk password>"
+    When  user enters username "<helpdesk username>"
+    And   user enters username "<helpdesk password>"
+    And   user click login button
     Then  user should see the helpdesk "<his/her name>"
     Examples:
 
@@ -51,6 +56,11 @@ Feature: Login functionality
       | helpdesk35@cybertekschool.com | UserUser          | helpdesk35@cybertekschool.com |
       | helpdesk53@cybertekschool.com | UserUser          | helpdesk53@cybertekschool.com |
       | helpdesk93@cybertekschool.com | UserUser          | helpdesk93@cybertekschool.com |
+
+
+
+
+
 
 
 

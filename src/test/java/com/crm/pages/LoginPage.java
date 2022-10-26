@@ -20,8 +20,10 @@ public class LoginPage {
     @FindBy(className = "login-btn")
     public WebElement loginBtn;
 
-    @FindBy(className = "errorText")
+    @FindBy(className = "errortext")
     public WebElement alertText;
+
+
 
 
 

@@ -57,6 +57,12 @@ public class LoginStepDefinitions {
     }
 
 
+    @Then("user should see the helpdesk {string}")
+    public void user_should_see_the_helpdesk(String string) {
+
+    }
+
+
 
 
 
