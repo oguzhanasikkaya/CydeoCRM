@@ -16,6 +16,9 @@ public class BasePage {
     @FindBy(id = "menu-counter-live-feed")
     public WebElement ActiveStreamBtn;
 
+    @FindBy(id = "user-name")
+    public WebElement username;
+
 
 
 }

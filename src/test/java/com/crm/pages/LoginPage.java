@@ -23,6 +23,14 @@ public class LoginPage {
     @FindBy(className = "errortext")
     public WebElement alertText;
 
+    @FindBy(className = "login-link-forgot-pass")
+    public WebElement forgotPasswordLink;
+
+    @FindBy(id = "USER_REMEMBER")
+    public WebElement rememberMe;
+
+
+
 
 
 
