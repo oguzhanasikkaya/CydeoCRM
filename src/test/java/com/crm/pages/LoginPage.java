@@ -29,6 +29,13 @@ public class LoginPage {
     @FindBy(id = "USER_REMEMBER")
     public WebElement rememberMe;
 
+    public void login (){
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+        usernameBox.sendKeys(ConfigurationReader.getProperty("hrUser"));
+        passwordBox.sendKeys(ConfigurationReader.getProperty("password"));
+        loginBtn.click();
+    }
+
 
 
 

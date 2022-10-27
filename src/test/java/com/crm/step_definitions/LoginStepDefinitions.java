@@ -1,6 +1,6 @@
 package com.crm.step_definitions;
 
-import com.crm.pages.BasePage;
+import com.crm.pages.HomePage;
 import com.crm.pages.LoginPage;
 import com.crm.utilities.ConfigurationReader;
 import com.crm.utilities.Driver;
@@ -13,7 +13,7 @@ import org.openqa.selenium.Keys;
 
 public class LoginStepDefinitions {
 
-    BasePage basePage = new BasePage();
+    HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
 
     @Given("User is on the login page")
@@ -38,7 +38,7 @@ public class LoginStepDefinitions {
 
     @Then("user access the home page")
     public void user_access_the_home_page() {
-        basePage.ActiveStreamBtn.isDisplayed();
+        homePage.ActiveStreamBtn.isDisplayed();
     }
 
     //----ac2--> "Incorrect login or password." should be displayed for invalid data
@@ -117,7 +117,7 @@ public class LoginStepDefinitions {
 
     @Then("user see their {string}")
     public void userSeeTheir(String arg0) {
-        Assert.assertEquals(basePage.username.getText(),arg0);
+        Assert.assertEquals(homePage.username.getText(),arg0);
 
     }
 
