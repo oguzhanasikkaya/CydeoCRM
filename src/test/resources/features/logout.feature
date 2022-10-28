@@ -14,7 +14,7 @@ Feature: Logout Functionality
     And   user click the logout button
     Then  user ends up on login page
 
-  @AZLC-1458
+@AZLC-1458
   Scenario: User can not go to the home page again by clicking the step back button
     after successfully logging out
 
