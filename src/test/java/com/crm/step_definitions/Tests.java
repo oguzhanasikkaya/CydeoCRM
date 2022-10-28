@@ -39,5 +39,13 @@ public class Tests extends BasePage {
         BrowserUtils.sleep(2);
     }
 
+    @Test
+    public  void test_3_profileDropdown(){
+        loginPage.login();
+        navigateToModule(ConfigurationReader.getProperty("hrUser"));
+        BrowserUtils.sleep(3);
+    }
+
+
 
 }

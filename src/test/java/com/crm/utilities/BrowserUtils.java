@@ -1,6 +1,7 @@
 package com.crm.utilities;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -150,5 +151,13 @@ public class BrowserUtils {
                 each.click();
             }
         }
+    }
+
+    public static void  navigateToModule(String moduleName ){
+
+        WebElement module = Driver.getDriver().findElement(By.xpath("//span[normalize-space(text())='"+moduleName+"']"));
+        module.click();
+
+
     }
 }

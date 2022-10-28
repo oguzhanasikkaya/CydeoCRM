@@ -20,7 +20,7 @@ import org.junit.runner.RunWith;
         glue = "com/crm/step_definitions",
         dryRun = false,
 
-        tags = "@AZLC-1428"
+        tags = "@AZLC-1457"
 )
 
 public class CukesRunner {
