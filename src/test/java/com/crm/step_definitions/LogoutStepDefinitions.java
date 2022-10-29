@@ -40,4 +40,22 @@ public class LogoutStepDefinitions{
     public void userEndsUpOnLoginPage() {
         Assert.assertEquals("Authorization",Driver.getDriver().getTitle());
     }
+
+    @And("user click the step back button")
+    public void userClickTheStepBackButton() {
+        Driver.getDriver().navigate().back();
+    }
+
+    @Then("user can not go to home page")
+    public void userCanNotGoToHomePage() {
+        Assert.assertEquals("Authorization",Driver.getDriver().getTitle());
+    }
+
+    @When("user close the open tab\\(s)")
+    public void userCloseTheOpenTabS() {
+    }
+
+    @And("user open new tab with home page url")
+    public void userOpenNewTabWithHomePageUrl() {
+    }
 }

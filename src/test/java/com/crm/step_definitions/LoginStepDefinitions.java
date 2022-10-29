@@ -122,5 +122,8 @@ public class LoginStepDefinitions {
     }
 
 
-
+    @And("user click login button")
+    public void userClickLoginButton() {
+        loginPage.loginBtn.click();
+    }
 }
