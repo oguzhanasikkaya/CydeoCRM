@@ -11,15 +11,13 @@ Feature: Login functionality
   8-All users can see their own usernames in the profile menu, after successful login
 
   Accounts are: hr, helpdesk, marketing
-@AZLC-1461
-  Background:
-    Given User is on the login page
+
 
 
 
   @AZLC-1427  @AZLC-1440
   Scenario Outline: As a User, I successfully login the app
-
+    Given User is on the login page
     When  User enters valid username "<username>"
     And   User enters valid password "<password>"
     And   User click login button
@@ -34,7 +32,7 @@ Feature: Login functionality
 
   @AZLC-1429
   Scenario Outline: As a User, I should warning message when I try to login with invalid credentials
-
+    Given User is on the login page
     When  user enters any username "<username>"
     And   user enters any password "<password>"
     And   User click login button
@@ -48,7 +46,7 @@ Feature: Login functionality
 
   @AZLC-1430
   Scenario Outline: When the password or username is empty, User should see "Please fill out this field" message
-
+    Given User is on the login page
     When user enters any username "<username>"
     And  user enters any password "<password>"
     And user click login button
@@ -62,24 +60,24 @@ Feature: Login functionality
 
   @AZLC-1436
   Scenario: After clicking on the "Forgot your password", User land on the "Get Password" page
-
+    Given User is on the login page
     When User click Forgot your password link
     Then User land  on the Get Password page
 
 
   @AZLC-1437
   Scenario: User can see "Remember Me" link exists and is clickable on the login page
-
+    Given User is on the login page
     Then  Remember Me link is clickable
 
   @AZLC-1438
   Scenario: User should see the password  in bullet signs by default
-
+    Given User is on the login page
     Then User should see the password in bullet signs by default
 
   @AZLC-1439
   Scenario: verify Enter key is working on the login page
-
+    Given User is on the login page
     And  user enter valid username and password
     And  user press ENTER
     Then user access the home page

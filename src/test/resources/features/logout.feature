@@ -1,25 +1,27 @@
+@AZLC-1421
 Feature: Logout Functionality
   User Story: As a User I should be able to log out
 
   Acceptance Criteria:
   1- The user can log out and ends up on the login page
   2- The user can not go to the home page again by clicking
-      the step back button after successfully logging out
-  3- The user must be logged out if the user close the
+  the step back button after successfully logging out
+  3- The user must be logged out if the user close the4
 
-  Background:
+
+  Background: This is pre condition
     Given User is on the home page
 
 
-@AZLC-1457
+  @AZLC-1457
   Scenario: When the user log out , User should ends up on the login page
     When  user click the user menu
     And   user click the logout button
     Then  user ends up on login page
 
-@AZLC-1458
+  @AZLC-1458
   Scenario: User can not go to the home page again by clicking the step back button
-                                                      after successfully logging out
+  after successfully logging out
 
     When  user click the user menu
     And   user click the logout button
@@ -28,8 +30,9 @@ Feature: Logout Functionality
 
 
   @AZLC-1459
-    Scenario: User must be logged out if the user close the open tab(all tabs if there are multiple open tabs)
+  Scenario: User must be logged out if the user close the open tab(all tabs if there are multiple open tabs)
     When  user open new tab with home page url
     And   user close the open tab(s)
     And   user open home page url
     Then  user can not go to home page
+
