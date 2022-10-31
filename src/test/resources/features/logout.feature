@@ -29,6 +29,7 @@ Feature: Logout Functionality
 
   @AZLC-1459
     Scenario: User must be logged out if the user close the open tab(all tabs if there are multiple open tabs)
-      When user close the open tab(s)
-      And  user open new tab with home page url
-      Then user can not go to home page
+    When  user open new tab with home page url
+    And   user close the open tab(s)
+    And   user open home page url
+    Then  user can not go to home page

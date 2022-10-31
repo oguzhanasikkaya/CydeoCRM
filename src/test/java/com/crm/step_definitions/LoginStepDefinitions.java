@@ -38,7 +38,7 @@ public class LoginStepDefinitions {
 
     @Then("user access the home page")
     public void user_access_the_home_page() {
-        homePage.ActiveStreamBtn.isDisplayed();
+        homePage.activeStreamBtn.isDisplayed();
     }
 
     //----ac2--> "Incorrect login or password." should be displayed for invalid data

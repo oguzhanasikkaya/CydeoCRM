@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +15,9 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class BrowserUtils {
+
+
+
 
 
 
@@ -155,9 +159,24 @@ public class BrowserUtils {
 
     public static void  navigateToModule(String moduleName ){
 
-        WebElement module = Driver.getDriver().findElement(By.xpath("//span[normalize-space(text())='"+moduleName+"']"));
+        WebElement module =
+                Driver.getDriver().findElement(By.xpath("//span[normalize-space(text())='"+moduleName+"']"));
+
         module.click();
 
 
     }
+
+    /*public static void navigateModuleAndRightClick(String moduleName){
+        WebElement module =
+                Driver.getDriver().findElement(By.xpath("//span[normalize-space(text())='"+moduleName+"']"));
+
+        Actions actions = new Actions(Driver.getDriver());
+
+
+
+
+
+
+    }*/
 }

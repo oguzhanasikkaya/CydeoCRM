@@ -11,12 +11,18 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 public class LogoutStepDefinitions{
 
 
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
+
+    Actions actions = new Actions(Driver.getDriver());
 
 
 
@@ -51,11 +57,27 @@ public class LogoutStepDefinitions{
         Assert.assertEquals("Authorization",Driver.getDriver().getTitle());
     }
 
-    @When("user close the open tab\\(s)")
-    public void userCloseTheOpenTabS() {
+    @When("user open new tab with home page url")
+    public void userOpenNewTabWithHomePageUrl() {
+        /*Action builder =actions.moveToElement(homePage.activeStreamBtn)
+                .contextClick(homePage.activeStreamBtn).sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ENTER).build();
+        builder.perform();*/
+
+        actions.moveToElement(homePage.activeStreamBtn)
+               .keyDown(Keys.LEFT_CONTROL).click()
+               .release().perform();
     }
 
-    @And("user open new tab with home page url")
-    public void userOpenNewTabWithHomePageUrl() {
+    @And("user close the open tab\\(s)")
+    public void userCloseTheOpenTabS() {
+        Driver.getDriver().quit();
     }
+
+    @And("user open home page url")
+    public void userOpenHomePageUrl() {
+        Driver.getDriver().get("https://qa.azulcrm.com/stream/");
+    }
+
+
 }
