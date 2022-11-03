@@ -1,5 +1,6 @@
 package com.crm.step_definitions;
 
+import com.crm.utilities.BrowserUtils;
 import com.crm.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -28,6 +29,7 @@ public class Hooks {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        BrowserUtils.sleep(3);
         Driver.closeDriver();
     }
 

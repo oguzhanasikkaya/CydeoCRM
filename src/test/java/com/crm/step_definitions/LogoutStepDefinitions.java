@@ -16,7 +16,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
-public class LogoutStepDefinitions{
+public class LogoutStepDefinitions extends BasePage{
 
 
     HomePage homePage = new HomePage();
@@ -34,7 +34,7 @@ public class LogoutStepDefinitions{
 
     @When("user click the user menu")
     public void userClickTheUserMenu() {
-        BrowserUtils.navigateToModule(ConfigurationReader.getProperty("hrUser"));
+        BrowserUtils.navigateToModule( getUserName() );
     }
 
     @And("user click the logout button")

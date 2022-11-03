@@ -17,10 +17,6 @@ import java.util.concurrent.TimeUnit;
 public class BrowserUtils {
 
 
-
-
-
-
     /**
      This method will accept int (int seconds) and execute Thread.sleep for given duration
      */
@@ -78,6 +74,16 @@ public class BrowserUtils {
 
     }
 
+    public static void waitForVisibilityOf(WebElement webElement){
+
+        Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+
+    }
+
 
     /**
      * where we use this method: A web element should disappear in the page.
@@ -120,7 +126,7 @@ public class BrowserUtils {
 
         List<WebElement> actualOptionsAsWebElement = select.getOptions();
 
-        //create a list of string and pass all of the actual web element options string into that new list
+        //create a list of string and pass all  actual web element options string into that new list
 
         List<String> actualOptionsAsString = new ArrayList<>();
 
@@ -166,6 +172,8 @@ public class BrowserUtils {
 
 
     }
+
+
 
     /*public static void navigateModuleAndRightClick(String moduleName){
         WebElement module =
