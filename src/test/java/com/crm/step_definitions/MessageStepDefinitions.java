@@ -3,10 +3,12 @@ package com.crm.step_definitions;
 import com.crm.pages.HomePage;
 import com.crm.pages.MessagePage;
 import com.crm.utilities.BrowserUtils;
+import com.crm.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class MessageStepDefinitions {
     HomePage homePage = new HomePage();
@@ -48,6 +50,7 @@ public class MessageStepDefinitions {
 
     @And("user select any user")
     public void userSelectAnyUser() {
+        BrowserUtils.sleep(2);
         messagePage.helpdesk1.click();
 
 
@@ -55,5 +58,37 @@ public class MessageStepDefinitions {
 
     @Then("user should see selected user in the message body")
     public void userShouldSeeSelectedUserInTheMessageBody() {
+        messagePage.helpdesk1InBody.isDisplayed();
+    }
+
+    @When("user click link button")
+    public void userClickLinkButton() {
+        messagePage.linkBtn.click();
+    }
+
+    @And("user write text name")
+    public void userWriteTextName() {
+        messagePage.linkTextBox.sendKeys("this text in order for test");
+    }
+
+    @And("user write text link")
+    public void userWriteTextLink() {
+        messagePage.linkUrlBox.sendKeys("https://docs.google.com/document/d/1WngspGGhOBrJDjmbXVQsIQVs386ca2121IbEqJmq1bw/edit");
+    }
+
+    @And("user click save button")
+    public void userClickSaveButton() {
+        BrowserUtils.sleep(2);
+        messagePage.saveLinkBtn.click();
+        System.out.println("save btn click");
+    }
+
+    @Then("message body contain link text")
+    public void messageBodyContainLinkText() {
+        Driver.getDriver().switchTo().frame(messagePage.messageBodyIframe);
+        System.out.println("messagePage.linkTextInBody.getText() = " + messagePage.linkTextInBody.getText());
+        Driver.getDriver().switchTo().defaultContent();
+
+
     }
 }

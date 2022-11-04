@@ -25,3 +25,11 @@ Feature: I should be able to add link, insert video, mention, quote, add tag in 
     Then  user should see selected user in the message body
 
 
+   Scenario: User should be able to attach link to specified text.
+     When user click link button
+     And  user write text name
+     And  user write text link
+     And user click save button
+     Then message body contain link text
+
+

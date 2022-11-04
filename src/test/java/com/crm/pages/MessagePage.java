@@ -14,11 +14,29 @@ public class MessagePage {
     @FindBy(id = "feed-add-post-form-tab-message")
     public WebElement message;
 
+    @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
+    public WebElement messageBodyIframe;
+
     @FindBy(id = "bx-b-uploadfile-blogPostForm")
     public WebElement uploadFilesBtn;
 
     @FindBy(id = "bx-b-link-blogPostForm")
     public WebElement linkBtn;
+
+            @FindBy(id = "linkidPostFormLHE_blogPostForm-text")
+            public WebElement linkTextBox;
+
+            @FindBy(id = "linkidPostFormLHE_blogPostForm-href")
+            public WebElement linkUrlBox;
+
+            @FindBy(xpath = "//input[@value='Save']")
+            public WebElement saveLinkBtn;
+
+            @FindBy(xpath = "//input[@value='Cancel']")
+            public WebElement cancelLinkBtn;
+
+            @FindBy(linkText = "this text in order for test")
+            public WebElement linkTextInBody;
 
     @FindBy(id = "bx-b-video-blogPostForm")
     public WebElement insertVideBtn ;
@@ -58,6 +76,11 @@ public class MessagePage {
 
     @FindBy(xpath = "(//div[.='helpdesk1@cybertekschool.com'])[3]")
     public WebElement helpdesk1;
+
+    @FindBy(xpath = "//span[.='helpdesk1@cybertekschool.com']")
+    public WebElement helpdesk1InBody;
+
+
 
 
 
